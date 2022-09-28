@@ -1,0 +1,48 @@
+@model NetcoreKerryInventory.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card mx-4 my-5">
+
+<div class="card-header">
+        <div class="row">
+            <div class="col-6">
+                <h4 class="mt-1 my-0 py-0">เพิ่มหมวดหมู่ใหม่</h4>
+            </div>
+            <div class="col-6 text-right">
+                <a asp-action="Index" asp-controller="Categories" class="btn btn-outline-info">กลับหน้าหมวดหมู่</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body col-md-8 offset-md-2 my-2">
+        <div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CategoryName" class="control-label"></label>
+                <input asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryStatus" class="control-label"></label>
+                <input asp-for="CategoryStatus" class="form-control" />
+                <span asp-validation-for="CategoryStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+
+
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

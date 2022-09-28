@@ -1,0 +1,39 @@
+@model NetcoreKerryInventory.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card mx-4 my-5">
+
+    <div>
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="mt-1 my-0 py-0">@Html.DisplayFor(model => model.CategoryName)</h4>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a asp-action="Index" asp-controller="Categories" class="btn btn-outline-info">กลับหน้าสินค้า</a>
+                    <a asp-action="Edit" asp-route-id="@Model.CategoryID" class="btn btn-warning">แก้ไข</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body my-2">
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CategoryName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CategoryStatus)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CategoryStatus)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+</div>
